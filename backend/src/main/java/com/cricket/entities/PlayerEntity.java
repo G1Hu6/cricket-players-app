@@ -24,9 +24,10 @@ public class PlayerEntity {
 
     private String country;
 
+    @Column(length = 4000)
     private String imageUrl;
 
-    private String position;
+    private String positions;
 
     private Integer runs;
 

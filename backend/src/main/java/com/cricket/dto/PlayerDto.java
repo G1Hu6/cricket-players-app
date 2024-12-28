@@ -1,5 +1,7 @@
 package com.cricket.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -18,9 +20,10 @@ public class PlayerDto {
 
     private String country;
 
+    @Column(length = 4000)
     private String imageUrl;
 
-    private String position;
+    private String positions;
 
     private Integer runs;
 
