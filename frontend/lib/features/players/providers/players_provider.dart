@@ -7,6 +7,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'players_provider.g.dart';
 
 @riverpod
-FutureOr<List<PlayerModel>> players(Ref ref) {
+FutureOr<List<PlayerModel>> players(Ref ref ) {
   return ref.read(playerServiceProvicer).getAllPlayers();
 }

@@ -27,7 +27,7 @@ mixin _$PlayerModel {
   String get positions => throw _privateConstructorUsedError;
   int get runs => throw _privateConstructorUsedError;
   double get strikeRate => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  dynamic get updatedAt => throw _privateConstructorUsedError;
 
   /// Serializes this PlayerModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ abstract class $PlayerModelCopyWith<$Res> {
       String positions,
       int runs,
       double strikeRate,
-      DateTime updatedAt});
+      dynamic updatedAt});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ class _$PlayerModelCopyWithImpl<$Res, $Val extends PlayerModel>
     Object? positions = null,
     Object? runs = null,
     Object? strikeRate = null,
-    Object? updatedAt = null,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -109,10 +109,10 @@ class _$PlayerModelCopyWithImpl<$Res, $Val extends PlayerModel>
           ? _value.strikeRate
           : strikeRate // ignore: cast_nullable_to_non_nullable
               as double,
-      updatedAt: null == updatedAt
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -133,7 +133,7 @@ abstract class _$$PlayerModelImplCopyWith<$Res>
       String positions,
       int runs,
       double strikeRate,
-      DateTime updatedAt});
+      dynamic updatedAt});
 }
 
 /// @nodoc
@@ -156,7 +156,7 @@ class __$$PlayerModelImplCopyWithImpl<$Res>
     Object? positions = null,
     Object? runs = null,
     Object? strikeRate = null,
-    Object? updatedAt = null,
+    Object? updatedAt = freezed,
   }) {
     return _then(_$PlayerModelImpl(
       id: null == id
@@ -187,10 +187,10 @@ class __$$PlayerModelImplCopyWithImpl<$Res>
           ? _value.strikeRate
           : strikeRate // ignore: cast_nullable_to_non_nullable
               as double,
-      updatedAt: null == updatedAt
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as dynamic,
     ));
   }
 }
@@ -226,7 +226,7 @@ class _$PlayerModelImpl implements _PlayerModel {
   @override
   final double strikeRate;
   @override
-  final DateTime updatedAt;
+  final dynamic updatedAt;
 
   @override
   String toString() {
@@ -248,14 +248,21 @@ class _$PlayerModelImpl implements _PlayerModel {
             (identical(other.runs, runs) || other.runs == runs) &&
             (identical(other.strikeRate, strikeRate) ||
                 other.strikeRate == strikeRate) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            const DeepCollectionEquality().equals(other.updatedAt, updatedAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, country, imageUrl,
-      positions, runs, strikeRate, updatedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      country,
+      imageUrl,
+      positions,
+      runs,
+      strikeRate,
+      const DeepCollectionEquality().hash(updatedAt));
 
   /// Create a copy of PlayerModel
   /// with the given fields replaced by the non-null parameter values.
@@ -282,7 +289,7 @@ abstract class _PlayerModel implements PlayerModel {
       required final String positions,
       required final int runs,
       required final double strikeRate,
-      required final DateTime updatedAt}) = _$PlayerModelImpl;
+      required final dynamic updatedAt}) = _$PlayerModelImpl;
 
   factory _PlayerModel.fromJson(Map<String, dynamic> json) =
       _$PlayerModelImpl.fromJson;
@@ -302,7 +309,7 @@ abstract class _PlayerModel implements PlayerModel {
   @override
   double get strikeRate;
   @override
-  DateTime get updatedAt;
+  dynamic get updatedAt;
 
   /// Create a copy of PlayerModel
   /// with the given fields replaced by the non-null parameter values.

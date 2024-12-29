@@ -5,6 +5,8 @@ import com.cricket.exceptions.ResponseNotFoundException;
 import com.cricket.repositories.PlayerRepository;
 import com.cricket.services.PlayerService;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,10 +18,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "players")
-@RequiredArgsConstructor
 public class PlayerController {
 
-    private final PlayerService playerService;
+	@Autowired
+    private PlayerService playerService;
 
     @GetMapping
     public ResponseEntity<List<PlayerDto>> getAllPlayers(){

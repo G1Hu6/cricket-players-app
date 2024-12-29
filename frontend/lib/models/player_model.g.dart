@@ -15,7 +15,7 @@ _$PlayerModelImpl _$$PlayerModelImplFromJson(Map<String, dynamic> json) =>
       positions: json['positions'] as String,
       runs: (json['runs'] as num).toInt(),
       strikeRate: (json['strikeRate'] as num).toDouble(),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      updatedAt: json['updatedAt'],
     );
 
 Map<String, dynamic> _$$PlayerModelImplToJson(_$PlayerModelImpl instance) =>
@@ -27,5 +27,5 @@ Map<String, dynamic> _$$PlayerModelImplToJson(_$PlayerModelImpl instance) =>
       'positions': instance.positions,
       'runs': instance.runs,
       'strikeRate': instance.strikeRate,
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'updatedAt': instance.updatedAt,
     };
