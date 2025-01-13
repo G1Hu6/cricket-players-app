@@ -1,6 +1,7 @@
 # frontend
 
 A new Flutter project.
+This project is implement in flutter.
 
 ## Getting Started
 
